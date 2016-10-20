@@ -8,11 +8,12 @@ mostrar el array.
 
 function paresImpares(){
 	var list = new Array();
+	newList = new Array();//Si no se hace global no puedo llamarla fuera
 	for (i=0;i<100;i++){
 		list.push(random())
 	}
 	console.log(list);
-	list.forEach(joinOddEven);
+	joinOddEven(list);
 
 }
 
@@ -20,8 +21,22 @@ function random() {
   return Math.floor(Math.random() * (1000 - 1) + 1);
 }
 
-function joinOddEven(value, index){
-		console.log(value);
+function joinOddEven(x){
+	x.filter(even);
+	x.filter(odd);
+	console.log(newList);
+}
+
+function even(num){
+	if (num % 2 == 0){
+		newList.push(num);
+	}
+}
+
+function odd(num){
+	if (num % 2 != 0){
+		newList.push(num);
+	}
 }
 
 window.onload = function(){
