@@ -20,8 +20,8 @@ function lanzamiento(d1,d2){
 }
 
 function random(d1,d2){
-	x= Math.floor(Math.random() * 6;
-	y= Math.floor(Math.random() * 6;
+	x= Math.floor(Math.random() * 7);
+	y= Math.floor(Math.random() * 7);
 	return d1[x]+d2[y];
 }
 
