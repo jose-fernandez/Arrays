@@ -20,8 +20,8 @@ function lanzamiento(d1,d2){
 }
 
 function random(d1,d2){
-	x= Math.floor(Math.random() * (6 -0)) + 0;
-	y= Math.floor(Math.random() * (6 -0)) + 0;
+	x= Math.floor(Math.random() * 6;
+	y= Math.floor(Math.random() * 6;
 	return d1[x]+d2[y];
 }
 
@@ -31,7 +31,7 @@ function simulacion(d1,d2){
 		var x = random(d1,d2);
 		++lista[x-2];
 	}
-	console.log(lista);
+	console.log(lista)
 }
 
 window.onload=function(){
