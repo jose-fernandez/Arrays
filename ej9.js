@@ -7,26 +7,36 @@ podemos usar arrays bidimensionales).
 function init(){
 	var dado1 = [1,2,3,4,5,6];
 	var dado2 = [1,2,3,4,5,6];
-	lanzamiento(dado1,dado2);
-	simulacion(dado1,dado2);
+	var matriz = [[0,0,0,0,0,0],
+				[0,0,0,0,0,0],
+				[0,0,0,0,0,0],
+				[0,0,0,0,0,0],
+				[0,0,0,0,0,0],
+				[0,0,0,0,0,0]];
+	lanzamiento(dado1,dado2,matriz);
 }
 
-function lanzamiento(d1,d2){
-	document.write(`${random(d1)}, ${random(d2)}`);
+function lanzamiento(d1,d2,m){
+	for (i=0;i<10000;i++){
+		var x = random(d1);
+		var y = random(d2);
+		var dim1=m[x-1];
+		++dim1[y-1];
+	}
+	print(m)
 }
 
 function random(d){
-	x= Math.floor(Math.random() * 7);
-	return d[x];
+	return Math.floor(Math.random() * (7 - 1)) + 1;
 }
 
-function simulacion(d1,d2){
-	var lista=[0,0,0,0,0,0,0,0,0,0,0]
-	for (i=0;i<36000;i++){
-		var x = random(d1,d2);
-		++lista[x-2];
+function print(m){
+	for (i=0;i<6;i++){
+		for (j=0;j<6;j++){
+			document.write(`${i+1} y ${j+1} => ${m[i][j]} veces.<br>`);
+		}
 	}
-	console.log(lista)
+
 }
 
 window.onload=function(){
